@@ -1,4 +1,4 @@
-Developing Data Products Week 2 Project
+Developing Data Products
 ================
 Author: Banu Priya
 Date: Aug 24, 2019
@@ -8,7 +8,7 @@ Week 2 Assignment - Web Page Using R Markdown and Leaflet
 Page: Leaflet_Pjt
 
 Description
-The web page produced from the R Markdown file in this repository shows the 20 oldest colleges and universities in the United States according to the following article found on niche.com:
+The web page produced from the R Markdown file in this repository shows the 10 oldest colleges and universities in the United States according to the following article found on niche.com:
 
 http://articles.niche.com/the-25-oldest-colleges-in-america/
 
