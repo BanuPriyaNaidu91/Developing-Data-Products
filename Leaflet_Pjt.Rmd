@@ -1,0 +1,146 @@
+---
+title: "10 Oldest schools in U.S. according to Niche.com"
+author: "Banu Priya"
+date: "08/24/2019"
+output: html_document
+---
+
+```{r echo=FALSE}
+
+# This report will list the top 10 Oldest colleges/universities in the U.S.
+# Note: Icons of Harvard & St John's are not accessibe.
+
+library(leaflet)
+
+# According to: http://articles.niche.com/the-25-oldest-colleges-in-america/
+
+univSites <- c(
+  "<a href='http://www.harvard.edu'> 1. Harvard University </a>",
+  "<a href='http://www.wm.edu'> 2. The College of William and Mary </a>",
+  "<a href='https://www.sjc.edu'> 3. St. John&quot;s College - Annapolis </a>",
+  "<a href='https://www.yale.edu'> 4. Yale University </a>",
+  "<a href='https://www.washcoll.edu'>5. Washington College </a>",
+  "<a href='http://www.upenn.edu'> 6. University of Pennsylvania </a>",
+  "<a href='https://www.moravian.edu'> 7. Moravian College </a>",
+  "<a href='http://www.udel.edu'> 8. University of Delaware </a>",
+  "<a href='https://www.princeton.edu'> 9. Princeton University </a>",
+  "<a href='https://www.wlu.edu'> 10. Washington and Lee University </a>"
+)
+
+univLatLon <- data.frame(
+  lat = c(42.374229, 37.270807, 38.982013, 41.308983, 39.217590,
+          39.951984, 40.630886, 39.677798, 40.348693, 37.790948
+         ),
+  lng = c(-71.116510, -76.713458, -76.491536, -72.928518, -76.068347,
+          -75.193753, -75.381207, -75.750512, -74.657560, -79.445050
+          )
+)
+
+# Icon of School 1
+harvard_Icon <- makeIcon(
+  iconUrl='https://commons.wikimedia.org/wiki/File:Blason_Harvard.svg#/media/File:Blason_Harvard.svg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 2
+w_and_m_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/8/88/New_William_%26_Mary_Logo.gif',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 3
+stJohns_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/7/7d/SJC_Logo_brick_Grey_RGB_web.jpg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 4
+yale_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/0/07/Yale_University_Shield_1.svg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 5
+wash_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/e/e7/Casey_Academic_Center.JPG',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 6
+penn_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/9/92/UPenn_shield_with_banner.svg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 7
+moravian_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/d/de/Moravian_College_Logo.jpg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 8
+delaware_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/b/b3/University_of_Delaware_wordmark.svg',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 9
+princeton_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/f/f1/Princetonshieldlarge.png',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+# Icon of School 10
+washLee_Icon <- makeIcon(
+  iconUrl='https://upload.wikimedia.org/wikipedia/commons/5/58/W%26L_symbol.png',
+  iconWidth=31 * 215 / 230,
+  iconHeight=31,
+  iconAnchorX=31 * 215 / 230 / 2,
+  iconAnchorY=16
+)
+
+univIcons <- iconList(
+    harvard_Icon,
+    w_and_m_Icon,
+    stJohns_Icon,
+    yale_Icon,
+    wash_Icon,
+    penn_Icon,
+    moravian_Icon,
+    delaware_Icon,
+    princeton_Icon,
+    washLee_Icon
+)
+
+univLatLon %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon=univIcons, popup=univSites)
+```
