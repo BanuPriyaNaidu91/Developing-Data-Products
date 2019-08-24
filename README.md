@@ -1,8 +1,7 @@
 Developing Data Products Week 2 Project
 ================
-Mark Davey
-May 26, 2017
-================
+Author: Banu Priya
+Date: Aug 24, 2019
 
 Week 2 Assignment - Web Page Using R Markdown and Leaflet
 =========================================================
