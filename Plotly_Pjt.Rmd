@@ -1,0 +1,69 @@
+---
+title: "Developing Data Products - Plot of Volcanoes in the North/East Semihemisphere"
+author: "Banu Priya"
+date: "08/24/2019"
+---
+
+## Week 3 Assignment
+- R Markdown Presentation with Plotly Plot
+- Volcanoes in the North / East Semihemisphere
+
+## Volcanoes in the North / East Semihemisphere
+1. The data for the Plotly interactive plot on the following slide is from the following dataset located on Github:
+   https://github.com/plotly/datasets/blob/master/volcano_db.csv
+2. The plot is limited to those in the North / East Semihemisphere 
+
+---
+
+```{r, echo=FALSE, message=FALSE}
+# Volcanoes in the North / East Semihemisphere.
+
+library(ggplot2)
+library(plotly)
+
+# Read in the plotly dataset of volcanoes (over 1,500 of them).
+volcanoes <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/volcano_db.csv')
+
+# Select only Northern Hemisphere volcanoes.
+volcanoes_subset1 <- volcanoes[volcanoes$Latitude > 0, ]
+
+# Select only Eastern Hemisphere volcanoes.
+volcanoes_subset2 <- volcanoes_subset1[volcanoes_subset1$Longitude > 0, ]
+
+# That gives us a "semihemisphere".
+
+# Light gray boundaries.
+boundaries <- list(color=toRGB('grey'), width=0.5)
+
+# Specify map projection / options.
+world_map <- list(scope='world',
+                  projection=list(type='Natural Earth'),
+                  showframe=FALSE,
+                  showland=TRUE,
+                  showsubunits=TRUE,
+                  landcolor=toRGB("gray95"),
+                  subunitcolor=toRGB("gray95"),
+                  countrycolor=toRGB("gray95"),
+                  countrywidth=0.5,
+                  subunitwidth=0.5
+)
+
+# Create hover text.
+#volcanoes$hover <- with(volcanoes, paste(Volcano.Name, '<br>', 'Status:', Status))
+volcanoes_subset2$hover <- with(volcanoes_subset2, paste(Volcano.Name, '<br>', 'Status:', Status))
+
+world_plot <- plot_geo(volcanoes_subset2) %>%
+    add_trace(
+        x=~Latitude, y=~Longitude,
+        text=~hover,
+        mode='markers',
+        type='scattergeo'
+    ) %>%
+    layout(
+        title='Volcanoes in the N / E Semihemi<br>Source:<a href="https://github.com/plotly/datasets/blob/master/volcano_db.csv">Github Volcano Dataset</a>',
+        geo=world_map
+    )
+
+world_plot
+```
+
