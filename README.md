@@ -27,7 +27,7 @@ The web page produced from the Plotly R Markdown file in this repository shows t
 Notes
 To display the entire world map in order to show all of these volcanoes
 
-Week 4 Assignment - Web Page Using R Markdown and Plotly
+Week 4 Assignment - Shiny Application and Reproducible Pitch
 ========================================================
 Shiny App can be accessed at :https://banu-priya-1.shinyapps.io/Shiny/
 Pitch Presentation can be accessed at: http://rpubs.com/BanuPriyaNaidu/522033
