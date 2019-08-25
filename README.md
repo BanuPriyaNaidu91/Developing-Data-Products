@@ -29,9 +29,10 @@ To display the entire world map in order to show all of these volcanoes
 
 Week 4 Assignment - Web Page Using R Markdown and Plotly
 ========================================================
-Shiny App can be accessed:https://banu-priya-1.shinyapps.io/Shiny/
+Shiny App can be accessed at :https://banu-priya-1.shinyapps.io/Shiny/
+Pitch Presentation can be accessed at: http://rpubs.com/BanuPriyaNaidu/522033
 
-app.R has both UI & Server code. 
+app.R has both UI & Server code. Presentation.Rpres has the code for Pitch Presentation.Code can be referred at:
 
 Description: 
-TO create a Shiny application and deploy it on Rstudio's servers and use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application created.
+To create a Shiny application and deploy it on Rstudio's servers and use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application created.
