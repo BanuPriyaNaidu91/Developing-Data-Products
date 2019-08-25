@@ -32,7 +32,9 @@ Week 4 Assignment - Web Page Using R Markdown and Plotly
 Shiny App can be accessed at :https://banu-priya-1.shinyapps.io/Shiny/
 Pitch Presentation can be accessed at: http://rpubs.com/BanuPriyaNaidu/522033
 
-app.R has both UI & Server code. Presentation.Rpres has the code for Pitch Presentation.Code can be referred at:
+app.R has both UI & Server code. Presentation.Rpres has the code for Pitch Presentation.Code can be referred at:https://github.com/BanuPriyaNaidu91/Developing-Data-Products
 
 Description: 
 To create a Shiny application and deploy it on Rstudio's servers and use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about the application created.
+
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411
